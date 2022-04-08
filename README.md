@@ -30,8 +30,8 @@
 
 | 硬件 | 具体型号/规格 | 备选 | 链接 | 能否开票 |
 | --- | --- | --- | --- | --- |
-| 飞控 | ACFLY A9 |  | [淘宝](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.239b2e8dFKIICV&id=591615647197&_u=72nf4lkkfb36) | 能，加6个点 |
-| 电调 | 好盈XRotor乐天 40A |  | [淘宝](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.239b2e8dFKIICV&id=41195768497&_u=72nf4lkk8064) | 可以，补5个点 |
+| 飞控 | ACFLY A9 |  | [淘宝](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.239b2e8dFKIICV&id=591615647197&_u=72nf4lkkfb36) | 能 |
+| 电调 | 好盈XRotor乐天 40A |  | [淘宝](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.239b2e8dFKIICV&id=41195768497&_u=72nf4lkk8064) |
 | 电机 | 朗宇 Angel系列 A2212 KV1400 II |  | [淘宝](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.239b2e8dFKIICV&id=37277354171&_u=72nf4lkk652d) | 可以，补4个点 |
 | 机架 | f330 |  | [淘宝](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.239b2e8dFKIICV&id=560813937533&_u=72nf4lkk3529) | 满200开 |
 | 电池 | 5000mAh 3S 40c |  | [淘宝](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.239b2e8dFKIICV&id=45510144405&_u=72nf4lkkf655) | 可以，补3个点 |
@@ -70,3 +70,8 @@
 - [[Github]ACFLY仓库](https://github.com/superstarzhu/ACFly-Prophet)
 
 - [[CSDN]ACfly调参记录（包括ACfly-F330和ACfly-T265）](https://www.csdn.net/tags/NtjaYg0sMzg4OTktYmxvZwO0O0OO0O0O.html)
+
+
+#### 相关论坛
+- [5iMX](http://www.5imx.com/portal.php)
+- [Moz8](https://www.moz8.com/)
