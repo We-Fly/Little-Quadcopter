@@ -58,3 +58,44 @@
 - 绿点任务函数，在基本要求（2）的前提下，飞行器能够在环路飞行过程中发现道路缺陷区域 B，同时打开激光笔标识缺陷区域中心位置，持续5s
 
 - 计算中心点位置，移动过去
+
+
+
+### 如何编译
+
+#### Arch linux
+
+如果你是在`Arch linux`环境下的话很简单，你需要先安装`Cmake`和`OpenCV`，可能还需要安装`gcc`。
+
+``` shell
+sudo pacman -S gcc cmake opencv 
+```
+如果你的发行版不是archlinux或者你的opencv是自己编译的，可能需要修改`CMakeLists.txt`的内容
+
+需要修改
+```
+7   set(OPENCV_INCLUDE_DIR /usr/include/opencv4) #include目录
+8   set(OPENCV_LIB_DIR /usr/lib/) #lib目录
+```
+
+接下来需要新建一个build目录。假设你此时已经进入了项目根目录
+
+``` shell
+# 进入cv文件夹
+cd cv
+# 创建一个build目录
+mkdir build
+# 进入build文件夹
+cd build
+```
+
+然后执行下面的命令生成
+``` shell
+cmake ../ -DCMAKE_BUILD_TYPE=Release
+
+cmake --build .
+```
+
+如果你是在跑目前的示例代码可能需要把`/cv/doc/wind-turbine.jpg`拷贝到build目录下
+
+然后执行`./write_text`就会在build目录下生成示例图片了
