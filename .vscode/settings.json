@@ -3,5 +3,6 @@
     "cmake.buildDirectory": "${workspaceFolder}/cv/build",
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "cmake.cmakePath": "C:\\Program Files\\CMake\\bin\\cmake.exe"
 }
