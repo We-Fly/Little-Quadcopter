@@ -14,7 +14,7 @@ using namespace cv;
 int main() {
 
     cv::Mat img = cv::imread("..\\doc\\wind-turbine.jpg", cv::IMREAD_COLOR);
-    cv::putText(img, "添加文字TEST", cv::Point(100, 100), cv::FONT_ITALIC, 2.0, cv::Scalar(0, 0, 255), 2);
+    cv::putText(img, "wwwwwwTEST", cv::Point(100, 100), cv::FONT_ITALIC, 2.0, cv::Scalar(0, 0, 255), 2);
     cv::imwrite("text_img.jpg", img);
     cout<<"OK"<<endl;
 
