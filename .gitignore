@@ -32,4 +32,8 @@
 *.app
 test
 
+#屏蔽build目录
 build/
+
+#屏蔽settings.json的更改
+settings.json
