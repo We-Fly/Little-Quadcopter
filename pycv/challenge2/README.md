@@ -14,4 +14,4 @@
 
 [如何搭建单片机编译环境(MDK)(没建好)]()
 
-[如何搭建Python-OpenCV环境(没建好)]()
+[如何搭建Python-OpenCV环境](https://cloud.lwqwq.com/s/vdoUQ/video?name=opencv%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95_x264.mp4&share_path=%2F%E8%A7%86%E9%A2%91%E8%B5%84%E6%BA%90%2Fopencv%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95_x264.mp4)
