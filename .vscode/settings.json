@@ -4,5 +4,8 @@
     "files.associations": {
         "iostream": "cpp"
     },
-    "cmake.cmakePath": "C:\\Program Files\\CMake\\bin\\cmake.exe"
+    "cmake.cmakePath": "C:\\Program Files\\CMake\\bin\\cmake.exe",
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "cmake.configureOnOpen": false
 }

@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",
+        "jeff-hykin.better-cpp-syntax",
+        "ms-vscode.cpptools-themes",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "twxs.cmake",
+        "ms-vscode.cmake-tools",
+        "shd101wyy.markdown-preview-enhanced",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "vscode-icons-team.vscode-icons",
+        "sketchbuch.vsc-workspace-sidebar"
+    ]
+}
