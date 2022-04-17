@@ -1,3 +1,4 @@
+import cv2
 from src.shapedectct import Picture
 
 # 实例化一个新的对象 需要输入文件路径
