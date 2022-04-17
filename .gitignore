@@ -37,3 +37,7 @@ build/
 
 #屏蔽settings.json的更改
 settings.json
+
+
+#pycache
+__pycache__
