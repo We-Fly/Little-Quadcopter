@@ -3,10 +3,13 @@ import imutils
 from cv2 import imread
 
 
-class Picture:  # Picture 类
+class Picture:  # 针对图片的操作
 
     def __init__(self, path_to_img) -> None:  # 初始化函数，要实例化一个新的对象需要输入文件路径
-        self.img = imread(path_to_img, cv2.IMREAD_COLOR)
+        if isinstance(path_to_img, str):
+            self.img = imread(path_to_img, cv2.IMREAD_COLOR)
+        else:
+            self.img = path_to_img
 
     def putText(self, string_to_write,  # 要放的字
                 put_where=(100, 100),  # 坐标
@@ -25,4 +28,3 @@ class Picture:  # Picture 类
 
     def resize(self, width) -> None:  # 缩放，输入宽度px
         self.img = imutils.resize(self.img, width)
-
