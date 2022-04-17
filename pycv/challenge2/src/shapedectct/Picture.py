@@ -1,25 +1,28 @@
 import cv2
+import imutils
 from cv2 import imread
 
 
-class Picture:  # 创建 Picture 类
+class Picture:  # Picture 类
 
     def __init__(self, path_to_img) -> None:  # 初始化函数，要实例化一个新的对象需要输入文件路径
         self.img = imread(path_to_img, cv2.IMREAD_COLOR)
 
-    def putText(self, string_to_write):  # 实现 放一个文字，需要输入一个string
-        org = (100, 100)
-        fontFace = cv2.FONT_HERSHEY_SIMPLEX
-        fontScale = 1
-        color = (255, 0, 0)
-        thickness = 2
-        lineType = cv2.LINE_AA
-        self.img = cv2.putText(self.img, string_to_write, org, fontFace, fontScale, color, thickness, lineType)
-        # cv2.imshow('image', img)
-        # cv2.waitKey(0) 
-        # cv2.destroyAllWindows() 
+    def putText(self, string_to_write,  # 要放的字
+                put_where=(100, 100),  # 坐标
+                fontFace=cv2.FONT_HERSHEY_SIMPLEX,  # 字体
+                fontScale=3,  # 大小
+                color=(255, 0, 0),  # 颜色
+                thickness=2,  # 粗细
+                lineType=cv2.LINE_AA  # 线型
+                ) -> None:  # 实现 放一个文字，至少需要输入一个string
+        self.img = cv2.putText(self.img, string_to_write, put_where, fontFace, fontScale, color, thickness, lineType)
 
-    def show(self):  # 实现 展示图片
+    def show(self) -> None:  # 实现 展示图片
         cv2.imshow("image", self.img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
+    def resize(self, width) -> None:  # 缩放，输入宽度px
+        self.img = imutils.resize(self.img, width)
+

@@ -5,5 +5,7 @@ from src.shapedectct import Picture
 test = Picture("test.jpg")
 # 放一个文字，需要输入一个string
 test.putText("wwwwwwww")
+
+test.resize(500)
 # 展示图片
 test.show()
