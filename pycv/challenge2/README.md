@@ -169,12 +169,12 @@ cd .\pycv\challenge2\
 <details>
 <summary>实现</summary>
 
-| 方法                                                                    | 定义             |
-|-----------------------------------------------------------------------|----------------|
-| [Picture.\_\_init__()](pycv/challenge2/src/shapedetect/Picture.py#L8) | Picture实例初始化函数 |
-|                                                                       |                |
-|                                                                       |                |
-|                                                                       |                |
+| 方法                                                    | 定义             |
+|-------------------------------------------------------|----------------|
+| [Picture.\_\_init__()](src/shapedetect/Picture.py#L8) | Picture实例初始化函数 |
+|                                                       |                |
+|                                                       |                |
+|                                                       |                |
 
 
 
