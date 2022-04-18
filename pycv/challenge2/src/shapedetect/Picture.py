@@ -25,7 +25,7 @@ class Picture:  # 针对图片的操作
         self.modify = cv2.putText(self.raw, string_to_write, put_where, fontFace, fontScale, color, thickness, lineType)
 
     def show(self) -> None:  # 实现 展示图片
-        cv2.imshow("image", self.raw)
+        cv2.imshow("image", self.modify)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
