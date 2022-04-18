@@ -1,8 +1,9 @@
 import cv2
 import argparse
-import imutils
-from src.shapedetect import Picture
 
+import imutils
+
+from src.shapedetect import Picture, putChineseText
 
 ap = argparse.ArgumentParser(
     prog="Little-Quadcopter",
@@ -36,16 +37,8 @@ def image_opt() -> None:  # 图片操作
 def frame_opt() -> None:  # 视频操作
     while 1:
         frame = Picture(webcam.read()[1])
-        frame.resize(300)
-        # Do something
-
-        frame.gray()
-        frame.blur()
-        frame.threshold()
-        # Do something
-
-        # 显示视频，按q退出
-        cv2.imshow("capture", frame.modify)
+        frame.drawShape(resize=300)
+        cv2.imshow("capture", frame.resized)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
