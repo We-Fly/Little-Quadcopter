@@ -6,6 +6,8 @@ from cv2 import imread
 class Picture:  # 针对图片的操作
 
     def __init__(self, path_to_img) -> None:  # 初始化函数，要实例化一个新的对象需要输入文件路径
+        self.modify = None
+        self.img = None
         if isinstance(path_to_img, str):
             self.img = imread(path_to_img, cv2.IMREAD_COLOR)
         else:
@@ -28,3 +30,12 @@ class Picture:  # 针对图片的操作
 
     def resize(self, width) -> None:  # 缩放，输入宽度px
         self.img = imutils.resize(self.img, width)
+
+    def gray(self) -> None:  # 黑白
+        self.modify = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
+
+    def blur(self, ksize=(5, 5), sigmaX=0) -> None:  # 高斯模糊
+        self.modify = cv2.GaussianBlur(self.modify, ksize, sigmaX)
+
+    def threshold(self, thresh=60, maxval=255) -> None:  # 二值化
+        self.modify = cv2.threshold(self.modify, thresh, maxval, cv2.THRESH_BINARY)[1]
