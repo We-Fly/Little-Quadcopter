@@ -1,7 +1,7 @@
 import cv2
 import argparse
 import imutils
-from src.shapedectct import Picture
+from src.shapedetect import Picture
 
 
 ap = argparse.ArgumentParser(

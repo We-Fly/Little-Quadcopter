@@ -164,4 +164,20 @@ cd .\pycv\challenge2\
 
 ### 代码
 
-`main.py`是整个程序的入口，主要功能的实现都写在src下，我这边用了面向对象的写法以提高某些常用功能代码的复用性
+`main.py`是整个程序的入口，主要功能的实现都写在`src/shapedetect`下
+
+<details>
+<summary>实现</summary>
+
+| 方法                                                                    | 定义             |
+|-----------------------------------------------------------------------|----------------|
+| [Picture.\_\_init__()](pycv/challenge2/src/shapedetect/Picture.py#L8) | Picture实例初始化函数 |
+|                                                                       |                |
+|                                                                       |                |
+|                                                                       |                |
+
+
+
+
+
+</details>
