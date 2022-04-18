@@ -39,12 +39,13 @@ def frame_opt() -> None:  # 视频操作
         frame.resize(300)
         # Do something
 
-        frame.putText("wwwwwwww")
-
+        frame.gray()
+        frame.blur()
+        frame.threshold()
         # Do something
 
         # 显示视频，按q退出
-        cv2.imshow("capture", frame.img)
+        cv2.imshow("capture", frame.modify)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
