@@ -169,17 +169,17 @@ cd .\pycv\challenge2\
 <details>
 <summary>实现</summary>
 
-| 方法                                                    | 定义                                                                                            |
-|-------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Picture.\_\_init__()](src/shapedetect/Picture.py#L8) | 实例化Picture类需要输入一个图片路径或者一个cv图像                                                                 |
-| [Picture.putText()](src/shapedetect/Picture.py#L17)   | 需要至少输入要写的字，参数列表:(string_to_write, put_where, fontFace, fontScale, color, thickness, lineType) |
-| [Picture.show()](src/shapedetect/Picture.py#L27)      | 显示Picture.modify                                                                              |
-| [Picture.resize()](src/shapedetect/Picture.py#L32)    | 需要输入宽度                                                                                        |
-| [Picture.gray()](src/shapedetect/Picture.py#L36)      | 灰阶处理图像                                                                                        |
-| [Picture.blur()](src/shapedetect/Picture.py#L39)      | 高斯模糊处理图像，可选参数(ksize, sigmaX)                                                                  |
-| [Picture.threshold()](src/shapedetect/Picture.py#L42) | 二值化处理图像，可选参数(thresh, maxval)                                                                  |
+`[]`包裹的参数为可选参数，有默认值
 
-
+| 方法                                                                                                                               | 定义                                                      |
+|----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| [Picture.\_\_init__()](src/shapedetect/Picture.py#L8)                                                                            | 实例化Picture类需要输入一个图片路径或者一个cv图像                           |
+| [Picture.putText(string_to_write[, put_where, fontFace, fontScale, color, thickness, lineType])](src/shapedetect/Picture.py#L17) | 需要至少输入要写的字，(要写的字, 坐标, 字体, 大小, 颜色, 粗细, 线型)               |
+| [Picture.show()](src/shapedetect/Picture.py#L27)                                                                                 | 显示Picture.modify                                        |
+| [Picture.resize(width)](src/shapedetect/Picture.py#L32)                                                                          | 需要输入宽度                                                  |
+| [Picture.gray()](src/shapedetect/Picture.py#L36)                                                                                 | 灰阶处理图像                                                  |
+| [Picture.blur([ksize, sigmaX])](src/shapedetect/Picture.py#L39)                                                                  | 高斯模糊处理图像，可选参数(ksize-卷积核默认(5, 5), sigmaX-X 方向的高斯核标准差默认0) |
+| [Picture.threshold([thresh, maxval])](src/shapedetect/Picture.py#L42)                                                            | 二值化处理图像，可选参数(thresh-阈值, maxval-最大值)                     |
 
 
 </details>
