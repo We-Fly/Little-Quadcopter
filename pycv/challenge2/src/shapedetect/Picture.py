@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 from cv2 import imread
 
 
-def getCntShape(cnt) -> str:
+def getCntShapeName(cnt) -> str:
     # https://www.jianshu.com/p/2731f42882f4
     # 初始化图片名称与大概的形状
     peri = cv2.arcLength(cnt, True)
@@ -35,20 +35,24 @@ def getCntShape(cnt) -> str:
     return shapeName
 
 
-# def putChineseText(img, text, position, textColor=(0, 255, 0), textSize=20):
-#     if isinstance(img, np.ndarray):  # 判断是否OpenCV图片类型
-#         img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-#     # 创建一个可以在给定图像上绘图的对象
-#     draw = ImageDraw.Draw(img)
-#     # 字体的格式
-#     fontStyle = ImageFont.truetype("src/shapedetect/AR-PL-Ukai.ttc", textSize, encoding="utf-8")
-#     # 绘制文本
-#     draw.text(position, text, textColor, font=fontStyle)
-#     # 转换回OpenCV格式
-#     return cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+def getCntShapeColor(cnt, img) -> str:
+    M = cv2.moments(cnt)
+    cX = int(M["m10"] / (M["m00"] + 1))
+    cY = int(M["m01"] / (M["m00"] + 1))
+    (b, g, r) = img[cY][cX]
+
+    if r > (g + b):
+        color = "红色"
+    elif g > (r + b):
+        color = "绿色"
+    elif b > (r + g):
+        color = "蓝色"
+    else:
+        color = "NULL"
+    return color
 
 
-def putChineseText(img, text, position=(100, 100), textColor=(0, 255, 0), textSize=20):
+def putChineseText(img, text, position=(100, 100), textColor=(0, 255, 0), textSize=20) -> np.ndarray:
     if isinstance(img, np.ndarray):  # 判断是否OpenCV图片类型
         img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     # 创建一个可以在给定图像上绘图的对象
@@ -120,7 +124,7 @@ class Picture:  # 针对图片的操作
             M = cv2.moments(c)
             cX = int(M["m10"] / (M["m00"] + 1))
             cY = int(M["m01"] / (M["m00"] + 1))
-            shape = getCntShape(c)
+            shape = getCntShapeName(c)
 
             # multiply the contour (x, y)-coordinates by the resize ratio,
             # then draw the contours and the name of the shape on the image
@@ -130,7 +134,17 @@ class Picture:  # 针对图片的操作
             cv2.drawContours(self.resized, [c], -1, (0, 255, 0), 2)
             # cv2.putText(self.resized, shape, (cX, cY), cv2.FONT_HERSHEY_SIMPLEX,
             #             0.5, (255, 255, 255), 2)
-            self.resized = putChineseText(self.resized, shape, (cX, cY), textColor=(255, 0, 255), textSize=20)
+            (b, g, r) = self.resized[cY][cX]
+            if r > (g + b):
+                color = "红色"
+            elif g > (r + b):
+                color = "绿色"
+            elif b > (r + g):
+                color = "蓝色"
+            else:
+                color = "色盲了"
+            # print(r, g, b)
+            self.resized = putChineseText(self.resized, shape + color, (cX, cY), textColor=(255, 0, 255), textSize=20)
             # show the output image
             # cv2.imshow("Image", self.resized)
             # cv2.waitKey(0)

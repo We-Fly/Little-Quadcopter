@@ -29,6 +29,18 @@ ELSE ()
 	MESSAGE(STATUS "not supported platform: ${CMAKE_SYSTEM_NAME}")
 ENDIF (CMAKE_SYSTEM_NAME MATCHES "Linux")
 
+
+
+aux_source_directory(src DIR_SRCS)
+
+aux_source_directory(lib DIR_LIBS)
+
+aux_source_directory(include DIR_INCLUDE)
+
+add_executable(${PROJECT_NAME} ${DIR_SRCS} ${DIR_LIBS} ${DIR_INCLUDE})
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${OpenCV_LIBS})
+
 message(STATUS "###################################")
 message(STATUS "Project: ${PROJECT_NAME}")
 message(STATUS "    OpenCV include path: ${OPENCV_INCLUDE_DIR}")
@@ -36,11 +48,7 @@ message(STATUS "    OpenCV library path: ${OPENCV_LIB_DIR}")
 message(STATUS "    src file: ${DIR_SRCS}")
 message(STATUS "###################################")
 
-aux_source_directory(src DIR_SRCS)
 
-add_executable(${PROJECT_NAME} ${DIR_SRCS})
-
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${OpenCV_LIBS})
 #set(CMAKE_CXX_STANDARD 11)
 
 # set include directory

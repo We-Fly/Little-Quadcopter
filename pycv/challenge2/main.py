@@ -26,11 +26,8 @@ args = vars(ap.parse_args())
 
 
 def image_opt() -> None:  # 图片操作
-    image.resize(300)
-    image.gray()
-    image.blur()
-    image.threshold()
-    cv2.imshow("image", image.modify)
+    image.drawShape(resize=500)
+    cv2.imshow("image", image.resized)
     cv2.waitKey(0)
 
 

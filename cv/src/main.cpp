@@ -7,16 +7,13 @@
  * 
  */
 
-#include <opencv2/opencv.hpp>
-#include <iostream>
+
+#include "../include/header.h"
 using namespace std;
 using namespace cv;
-int main() {
+int main(int argc, char *argv[]) {
 
-    cv::Mat img = cv::imread("..\\doc\\wind-turbine.jpg", cv::IMREAD_COLOR);
-    cv::putText(img, "wwwwwwTEST", cv::Point(100, 100), cv::FONT_ITALIC, 2.0, cv::Scalar(0, 0, 255), 2);
-    cv::imwrite("text_img.jpg", img);
-    cout<<"OK"<<endl;
+
 
     return 0;
 }
