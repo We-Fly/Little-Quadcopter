@@ -102,7 +102,7 @@ class Picture:  # 针对图片的操作
     def gray(self) -> None:  # 黑白
         self.modify = cv2.cvtColor(self.modify, cv2.COLOR_BGR2GRAY)
 
-    def blur(self, ksize=(3, 3), sigmaX=0) -> None:  # 高斯模糊
+    def blur(self, ksize=(5, 5), sigmaX=0) -> None:  # 高斯模糊
         self.modify = cv2.GaussianBlur(self.modify, ksize, sigmaX)
 
     def threshold(self, thresh=60, maxval=255) -> None:  # 二值化

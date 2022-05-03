@@ -1,0 +1,3 @@
+[submodule "pycv/lq-challenge2-stm32"]
+	path = pycv/lq-challenge2-stm32
+	url = https://gitee.com/codygua/lq-challenge2-stm32.git
