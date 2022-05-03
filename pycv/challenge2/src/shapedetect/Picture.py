@@ -102,7 +102,7 @@ class Picture:  # 针对图片的操作
     def gray(self) -> None:  # 黑白
         self.modify = cv2.cvtColor(self.modify, cv2.COLOR_BGR2GRAY)
 
-    def blur(self, ksize=(5, 5), sigmaX=0) -> None:  # 高斯模糊
+    def blur(self, ksize=(3, 3), sigmaX=0) -> None:  # 高斯模糊
         self.modify = cv2.GaussianBlur(self.modify, ksize, sigmaX)
 
     def threshold(self, thresh=60, maxval=255) -> None:  # 二值化
@@ -112,8 +112,9 @@ class Picture:  # 针对图片的操作
         self.resize(resize)
         self.gray()
         self.blur()
-        self.threshold(thresh, maxval)
-        self.cnts = cv2.findContours(self.modify, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]
+        # self.threshold(thresh, maxval)
+        edge = cv2.Canny(self.modify, 75, 200)
+        self.cnts = cv2.findContours(edge, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)[0]
 
     def drawShape(self, resize=300, thresh=60, maxval=255):
         self.getCnts(resize, thresh, maxval)
